@@ -1,0 +1,31 @@
+<mvc:View controllerName="jsonmodel6.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <!-- Bind parent container to the input structure context -->
+        <VBox binding="{/formData}">
+            <form:SimpleForm>
+                <Label text="Employee ID"/>
+                <!-- Fixed property case-sensitivity to match controller -->
+                <Input value="{employeeId}" />
+
+                <Label text="First Name" />
+                <Input value="{firstName}"/>
+
+                <Label text="Last Name" />
+                <Input value="{lastName}"/>
+                
+                <Label />
+                <Button text="Submit Data" press="onSubmit" type="Emphasized"/>
+            </form:SimpleForm>
+        </VBox>
+
+        <!-- Bind output container explicitly to the display context -->
+        <VBox id="outputContainer" binding="{/submittedData}" class="sapUiSmallMargin">
+            <Text text="Employee ID: {employeeId}" />
+            <Text text="First Name: {firstName}" />
+            <Text text="Last Name: {lastName}" />
+        </VBox>
+    </Page>
+</mvc:View>
